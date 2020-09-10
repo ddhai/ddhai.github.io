@@ -124,7 +124,7 @@ For this blog post, we are considering that Kubernetes already has an applicatio
 We will perform GKE Persistent disk migration to Azure Persistent Disk using Velero.
 Follow the below steps:
 
-1. To back up, the deployment or statefulset checks for the volume name that is mounted to backup that particular persistent volume. For example, here pods need to be annotated with Volume Name “data”.
+1 - To back up, the deployment or statefulset checks for the volume name that is mounted to backup that particular persistent volume. For example, here pods need to be annotated with Volume Name “data”.
 
 ```yaml
 volumes:
@@ -133,7 +133,7 @@ volumes:
             claimName: mongodb 
 ```
 
-2. Annotate the pods with the volume names, you’d like to take the backup of and only those volumes will be backed up:
+2 - Annotate the pods with the volume names, you’d like to take the backup of and only those volumes will be backed up:
 
 ```shell
 $ kubectl -n NAMESPACE annotate pod/POD_NAME backup.velero.io/backup-volumes=VOLUME_NAME1,VOLUME_NAME2
@@ -145,13 +145,13 @@ For example,
 $ kubectl -n application annotate pod/wordpress-pod backup.velero.io/backup-volumes=data
 ```
 
-3. Take a backup of the entire namespace in which the application is running. You can also specify multiple namespaces or skip this flag to backup all namespaces by default. We are going to backup only one namespace in this blog.
+3 - Take a backup of the entire namespace in which the application is running. You can also specify multiple namespaces or skip this flag to backup all namespaces by default. We are going to backup only one namespace in this blog.
 
 ```shell
 $ velero backup create testbackup --include-namespaces application
 ```
 
-4. Monitor the progress of backup:
+4 - Monitor the progress of backup:
 
 ```shell
 $ velero backup describe testbackup --details       
