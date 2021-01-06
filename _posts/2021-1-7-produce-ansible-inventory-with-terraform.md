@@ -50,9 +50,9 @@ ${dns} ansible_host=${private-ip[index]} # ${private-id[index]}
 %{ endfor ~}
 ```
 
-**The `%{}` contain directives, as opposed to literals or variables.**
+The `%{}` contain directives, as opposed to literals or variables.
 
-**The two `~` are to remove excessive newlines and white spaces from the output.**  
+The two `~` are to remove excessive newlines and white spaces from the output.  
 
 Note there is one a the beginning and one at the end.
 
