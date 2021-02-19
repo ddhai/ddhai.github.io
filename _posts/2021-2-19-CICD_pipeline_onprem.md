@@ -66,23 +66,52 @@ Jenkins > New item
 
 ## Bitbucket repository structure to support CI/CD
 All the repositories will have a cicd directory inside the root folder and it will contain the below files/folders and scripts which perform different functions:
+
 .
 ├── README.md
+
 ├── cicd
+
 │ ├── helm
+
 │ │ └── dummy-service
+
 │ │ ├── Chart.yaml
+
 │ │ ├── templates
+
 │ │ │
+
 │ │ └── values.yaml
+
 │ ├── jenkins
+
 │ │ ├── Jenkinsfile.groovy
+
 │ │ ├── config.yaml
+
 │ │ ├── stage_build.sh
+
 │ │ ├── stage_docker.sh
+
 │ │ ├── stage_release.sh
+
 │ │ ├── stage_test.sh
+
 │ │ └── version.sh
+
 │ └── sonar-project.properties
+
 ├── docker
+
 │ ├── Dockerfile
+
+
+## What does this script do!
+- Jenkinsfile.groovy
+This is linking to the Jenkins library that runs all the stages for the job the groovy file named **pipelineMicroserviceGeneric** have all the codes managing the pipeline
+
+```
+@Library(‘omnius-pipeline’) _
+pipelineMicroserviceGeneric()
+```
