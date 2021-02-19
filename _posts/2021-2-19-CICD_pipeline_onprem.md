@@ -31,4 +31,4 @@ We will be focusing on setting up the pipeline.
 ## Branching strategy employed
 The branching strategy that designed for our development purpose:
 
-![Pic2](/images/cicd-pipeline.jpg)
+![Pic2](/images/cicd-pipeline.jpeg)
