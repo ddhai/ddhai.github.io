@@ -19,3 +19,16 @@ Sections in this post:
 
 Tools used in this pipeline
 
+![Pic1](/images/cicd-architecture.png)
+
+- Bitbucket on-premise
+- Jenkins server
+- Sonarqube on-premise
+- Harbor registry
+- Kubernetes on-premise
+
+We will be focusing on setting up the pipeline.
+## Branching strategy employed
+The branching strategy that designed for our development purpose:
+
+![Pic2](/images/cicd-pipeline.jpg)
