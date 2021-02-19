@@ -262,6 +262,7 @@ If executed the step “Create released” will be highlighted
 
 Source Code: 
 
+https://github.com/naviat/cicd-k8s-onprem
 
 ## Conclusion
 We have demonstrated a CI/CD workflow with Jenkins, Bitbucket on-premise, Sonarqube, Harbor, Helm and Kubernetes on-premise clusters. The benefit of this stack is flexibility since it allows you to implement practically any type of workflow quite conveniently.
