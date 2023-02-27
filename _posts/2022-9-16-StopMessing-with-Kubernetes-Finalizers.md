@@ -60,10 +60,16 @@ The 3 most common ones you will encounter in "*vanilla*" Kubernetes are `kuberne
 
 Besides these *"vanilla"* finalizers, you might encounter many more if you install Kubernetes Operators which often perform pre-deletion logic on their custom resources. A quick search through code of some popular projects turn up the following:
 
-    [Istio](https://github.com/istio/istio/blob/master/operator/pkg/controller/istiocontrolplane/istiocontrolplane_controller.go#L65) - `istio-finalizer.install.istio.io`
-    [Cert Manager](https://github.com/cert-manager/cert-manager/blob/ee8ec69fadff165afa96c2dd22264c16fdb7d065/internal/apis/acme/v1beta1/const.go#L20) - `finalizer.acme.cert-manager.io`
-    [Strimzi (Kafka)](https://github.com/strimzi/strimzi-kafka-operator/commit/69e77ce8d5918c25048a253f91f4bca8e89028d9#diff-0f711d9ed233c37fbe749fd6c4aadce73849f48de3c414d86d9af89d51ea5ef7R317) - `service.kubernetes.io/load-balancer-cleanup`
-    [Quay](https://github.com/quay/quay-operator/pull/405/files#diff-db06dd075ea792819f15dcbfb9c2376eea2e17832c2bd64ae6b381d3c947b57eR56) - `quay-operator/finalizer`
-    [Ceph/Rook](https://github.com/rook/rook/blob/master/Documentation/ceph-teardown.md#removing-the-cluster-crd-finalizer) - `ceph.rook.io/disaster-protection`
-    [ArgoCD](https://github.com/argoproj-labs/argocd-operator/pull/247/files#diff-1078fd6d90631dae21aebe2e5cb7b8f2e559f568d61b8277117dd19344462d47R188) - `argoproj.io/finalizer`
-    [Litmus Chaos](https://github.com/litmuschaos/chaos-operator/blob/master/pkg/controller/chaosengine/chaosengine_controller.go#L57) - `chaosengine.litmuschaos.io/finalizer`
+[Istio](https://github.com/istio/istio/blob/master/operator/pkg/controller/istiocontrolplane/istiocontrolplane_controller.go#L65) - `istio-finalizer.install.istio.io`
+
+[Cert Manager](https://github.com/cert-manager/cert-manager/blob/ee8ec69fadff165afa96c2dd22264c16fdb7d065/internal/apis/acme/v1beta1/const.go#L20) - `finalizer.acme.cert-manager.io`
+
+[Strimzi (Kafka)](https://github.com/strimzi/strimzi-kafka-operator/commit/69e77ce8d5918c25048a253f91f4bca8e89028d9#diff-0f711d9ed233c37fbe749fd6c4aadce73849f48de3c414d86d9af89d51ea5ef7R317) - `service.kubernetes.io/load-balancer-cleanup`
+
+[Quay](https://github.com/quay/quay-operator/pull/405/files#diff-db06dd075ea792819f15dcbfb9c2376eea2e17832c2bd64ae6b381d3c947b57eR56) - `quay-operator/finalizer`
+
+[Ceph/Rook](https://github.com/rook/rook/blob/master/Documentation/ceph-teardown.md#removing-the-cluster-crd-finalizer) - `ceph.rook.io/disaster-protection`
+
+[ArgoCD](https://github.com/argoproj-labs/argocd-operator/pull/247/files#diff-1078fd6d90631dae21aebe2e5cb7b8f2e559f568d61b8277117dd19344462d47R188) - `argoproj.io/finalizer`
+
+[Litmus Chaos](https://github.com/litmuschaos/chaos-operator/blob/master/pkg/controller/chaosengine/chaosengine_controller.go#L57) - `chaosengine.litmuschaos.io/finalizer`
